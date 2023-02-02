@@ -1,13 +1,13 @@
 :root {
   --dark-color: #0d0c0f;
-  --medium-color: rgb(105, 105, 105);
   --light-color: rgb(244, 245, 245);
-  --color-opacity: rgba(97, 0, 223, 0.03);
 }
 
 #root {
+  font-family: 'Neucha', cursive;
   max-width: 1280px;
   margin: 0 auto;
+  letter-spacing: 1px;
   padding: 2rem;
   text-align: center;
 }
@@ -37,4 +37,10 @@ img:hover {
 
 button {
   margin: 8px;
+}
+
+@media screen and (max-width: 768px) {
+  img {
+    margin: 2px;
+  }
 }

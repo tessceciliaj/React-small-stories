@@ -74,7 +74,7 @@ const ArticlePage = () => {
   const articles = [
     
     { title: 'Miniature stories ',
-     content: 'Welcome to explore my designed collection of miniarture stories. AI-art holding hand with a few words for your mind.',
+     content: 'What stories does these pictures behold? AI-art holding hand with a few letters for your imagination. Press next to explore.',
       picture1: pics.sistersImg,
       picture2: pics.galaxyChildImg,
       picture3: pics.sandHumanoidImg
