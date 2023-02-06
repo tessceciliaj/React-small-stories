@@ -1,50 +1,52 @@
 import React, { useState } from 'react'
 import './App.css'
-import sisters from './assets/sistrs.png'
-import woodenhouse from './assets/woodnhouse.png'
-import flowerpicker from './assets/flwrpckr.png'
-import galaxyChild from './assets/glxychld.png'
-import galaxyPet from './assets/glxypt.png'
-import galaxyWoman from './assets/glxywmn.png'
-import bioluminTent from './assets/biolumintent.png'
-import bioluminSky from './assets/bioluminsky.png'
-import bioluminHug from './assets/bioluminhug.png'
-import luminForest from './assets/luminfrst.png'
-import luminJellyfish from './assets/luminjlly.png'
-import luminPerson from './assets/luminprsn.png'
-import sandAnimal from './assets/sandanml.png'
-import sandHumanoid from './assets/sandhmn.png'
-import sandLabyrinth from './assets/sandlbrnth.png'
+import pic1 from './assets/biolumintent.png'
+import pic2 from './assets/bioluminsky.png'
+import pic3 from './assets/bioluminhug.png'
+import pic4 from './assets/flwrpckr.png'
+import pic5 from './assets/milkhnychld.png'
+import pic6 from './assets/mlkhnychld1.png'
+import pic7 from './assets/mlkhnymama.png'
+import pic8 from './assets/luminilnds.png'
+import pic9 from './assets/luminjlly.png'
+import pic10 from './assets/luminprsn.png'
+import pic11 from './assets/sandanml.png'
+import pic12 from './assets/sandhmn.png'
+import pic13 from './assets/sandlbrnth.png'
+import pic14 from './assets/sistrs.png'
+import pic15 from './assets/woodnhouse.png'
+import pic16 from './assets/luminfrst.png'
+
 
 const pics = {
-  bioluminTentImg: bioluminTent,
-  bioluminSkyImg: bioluminSky,
-  bioluminHugImg: bioluminHug,
-  flowerpickerImg: flowerpicker,
-  galaxyChildImg: galaxyChild,
-  galaxyPetImg: galaxyPet,
-  galaxyWomanImg: galaxyWoman,
-  galaxyWomanImg: galaxyWoman,
-  luminForestImg: luminForest,
-  luminJellyfishImg: luminJellyfish,
-  luminPersonImg: luminPerson,
-  sandAnimalImg: sandAnimal,
-  sandHumanoidImg: sandHumanoid,
-  sandLabyrinthImg: sandLabyrinth,
-  sistersImg: sisters,
-  woodenhouseImg: woodenhouse
+  bioluminTent: pic1,
+  bioluminSky: pic2,
+  bioluminHug: pic3,
+  flowerpicker: pic4,
+  milkHoneyChild: pic5,
+  milkHoneyTwin: pic6,
+  milkHoneyMama: pic7,
+  luminForest: pic8,
+  luminJellyfish: pic9,
+  luminPerson: pic10,
+  sandAnimal: pic11,
+  sandHumanoid: pic12,
+  sandLabyrinth: pic13,
+  sisters: pic14,
+  woodenhouse: pic15,
+  watersOfGlow: pic16
 }
 
-const sideLength = "200px";
+const sideLength = "250px";
 
-const Article = ({ title, content, picture1, picture2, picture3 }) => (
-  <div>
+const Article = ({ title, content, picture1, picture2, picture3, className }) => (
+  <div className={className}>
     <h3>{title}</h3>
      <img src={picture1} height={sideLength} width={sideLength} />
        <img src={picture2} height={sideLength} width={sideLength} />
        <img src={picture3} height={sideLength} width={sideLength} />
     <p>{content}</p>
-  </div>
+   </div>
 );
 
 const ArticleList = ({ articles, page, setPage }) => {
@@ -54,8 +56,8 @@ const ArticleList = ({ articles, page, setPage }) => {
 
   return (
     <div>
-      {visibleArticles.map(({title, content, picture1, picture2, picture3 }) => (
-        <Article key={title} title={title} content={content} picture1={picture1} picture2={picture2} picture3={picture3} />
+      {visibleArticles.map(({title, content, picture1, picture2, picture3, className }) => (
+        <Article key={title} title={title} content={content} picture1={picture1} picture2={picture2} picture3={picture3} className={className} />
       ))}
       <div>
         {page > 1 && (
@@ -73,41 +75,42 @@ const ArticlePage = () => {
   const [page, setPage] = useState(1);
   const articles = [
     
-    { title: 'Miniature stories ',
-     content: 'What stories does these pictures behold? AI-art holding hand with a few letters for your imagination. Press next to explore.',
-      picture1: pics.sistersImg,
-      picture2: pics.galaxyChildImg,
-      picture3: pics.sandHumanoidImg
+    { title: 'Story bubbles',
+      className: 'first',
+      content: 'What stories does these pictures behold? AI-art holding hand with a few letters for your imagination.',
+      picture1: pics.sisters,
+      picture2: pics.milkHoneyChild,
+      picture3: pics.watersOfGlow
     },
     { title: 'Woodland stroll',
-      content: 'Deep into the greenlands, with stealthy controlled steps, two sisters tiptoed on swampy moss. To help a frightened tiny flower picker calling for home. ',
-      picture1: pics.sistersImg,
-      picture2: pics.flowerpickerImg,
-      picture3: pics.woodenhouseImg
+      content: 'Deep into the woodlands, with stealthy steps, two sisters tiptoed on swampy moss. To help a frightened keeper of the forest calling for home. ',
+      picture1: pics.sisters,
+      picture2: pics.flowerpicker,
+      picture3: pics.woodenhouse
     },
-    { title: 'Starry Gaze',
-      content: 'Look into the eyes of a starry child and you can see a reflection of thier thoughts. A mother whom reflects as a goddess & a microorganism who just stare at you back.',
-      picture1: pics.galaxyChildImg,
-      picture2: pics.galaxyWomanImg,
-      picture3: pics.galaxyPetImg
+    { title: 'Milk & Honey',
+      content: 'Honey dripping as gold, creating an armor. Milk running from our eyes, filling our cups. Then we walk out into world. Like marionettes in a puppetshow.',
+      picture1: pics.milkHoneyChild,
+      picture2: pics.milkHoneyMama,
+      picture3: pics.milkHoneyTwin
     },
     { title: 'Decreasing Minutes',
       content: 'Two lovers at the end of their timeline. Before falling of the edge into oblivion, they share one last night of touch in the bioluminious frost.',
-      picture1: pics.bioluminSkyImg,
-      picture2: pics.bioluminHugImg,
-      picture3: pics.bioluminTentImg 
+      picture1: pics.bioluminSky,
+      picture2: pics.bioluminHug,
+      picture3: pics.bioluminTent 
     },
     { title: 'Painting with light',
      content: 'Inside glowing waters, small jellyfish bumps around and hymn tones of creativity. Their humanoid companions paint the surrounding with light, using their jelly heads.',
-     picture1: pics.luminForestImg,
-     picture2: pics.luminJellyfishImg,
-     picture3: pics.luminPersonImg 
+     picture1: pics.luminForest,
+     picture2: pics.luminJellyfish,
+     picture3: pics.luminPerson 
     },
     { title: 'Sand Mutations',
-      content: 'A sand humanoid in a vast desert limping with cracked soles towards the labyrinth of  Chrono. A place where time does not exist, but horse-penguins does.',
-      picture1: pics.sandAnimalImg,
-      picture2: pics.sandHumanoidImg,
-      picture3: pics.sandLabyrinthImg
+      content: 'A mortal in a vast desert limping with cracked soles towards the labyrinth of  Chrono. A place where time does not exist, but vicious horse-penguins does.',
+      picture1: pics.sandLabyrinth,
+      picture2: pics.sandHumanoid,
+      picture3: pics.sandAnimal
       },
   ];
 
