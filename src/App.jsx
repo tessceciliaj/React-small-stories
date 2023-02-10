@@ -37,14 +37,14 @@ const pics = {
   watersOfGlow: pic16
 }
 
-const sideLength = "250px";
+const sideLength = "270px";
 
 const Article = ({ title, content, picture1, picture2, picture3, className }) => (
   <div className={className}>
     <h3>{title}</h3>
-     <img src={picture1} height={sideLength} width={sideLength} />
-       <img src={picture2} height={sideLength} width={sideLength} />
-       <img src={picture3} height={sideLength} width={sideLength} />
+     <img src={picture1} className="firstPic" height={sideLength} width={sideLength} />
+       <img src={picture2}  className="secondPic" height={sideLength} width={sideLength} />
+       <img src={picture3} className="thirdPic" height={sideLength} width={sideLength} />
     <p>{content}</p>
    </div>
 );
@@ -83,13 +83,13 @@ const ArticlePage = () => {
       picture3: pics.watersOfGlow
     },
     { title: 'Woodland stroll',
-      content: 'Deep into the woodlands, with stealthy steps, two sisters tiptoed on swampy moss. To help a frightened keeper of the forest calling for home. ',
+      content: 'In the early morning hours, two sisters wandered towards their cattle. A few feet away, a keeper of the forest tiptoed home from his night shift.',
       picture1: pics.sisters,
       picture2: pics.flowerpicker,
       picture3: pics.woodenhouse
     },
     { title: 'Milk & Honey',
-      content: 'Honey dripping as gold, creating an armor. Milk running from our eyes, filling our cups. Then we walk out into world. Like marionettes in a puppetshow.',
+      content: 'Honey dripping as gold, creating an armor. Milk leaking from eyes, filling cups. Then we ballet out to the world. ',
       picture1: pics.milkHoneyChild,
       picture2: pics.milkHoneyMama,
       picture3: pics.milkHoneyTwin
