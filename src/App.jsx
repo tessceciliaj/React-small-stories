@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import './typography.css'
 import './App.css'
 import pic1 from './assets/biolumintent.png'
 import pic2 from './assets/bioluminsky.png'
@@ -37,15 +38,24 @@ const pics = {
   watersOfGlow: pic16
 }
 
-const sideLength = "270px";
+const sideLength = "250px";
 
 const Article = ({ title, content, picture1, picture2, picture3, className }) => (
-  <div className={className}>
+  <div className='{className} container'>
     <h3>{title}</h3>
-     <img src={picture1} className="firstPic" height={sideLength} width={sideLength} />
-       <img src={picture2}  className="secondPic" height={sideLength} width={sideLength} />
-       <img src={picture3} className="thirdPic" height={sideLength} width={sideLength} />
-    <p>{content}</p>
+    <div className="story-container">
+      <div className="innerleft inner">
+      <img src={picture1} className="firstPic" height={sideLength} width={sideLength} />
+      <p>{content}</p>
+      </div>
+      <div className="innerCenter inner">
+        <img src={picture2}  className="secondPic" height={sideLength} width={sideLength} />
+      </div>
+      <div className="innerRight inner">
+        <img src={picture3} className="thirdPic" height={sideLength} width={sideLength} />
+        <p>{content}</p>
+      </div>
+    </div>
    </div>
 );
 
@@ -55,11 +65,11 @@ const ArticleList = ({ articles, page, setPage }) => {
   const visibleArticles = articles.slice(startIndex, endIndex);
 
   return (
-    <div>
+    <div >
       {visibleArticles.map(({title, content, picture1, picture2, picture3, className }) => (
         <Article key={title} title={title} content={content} picture1={picture1} picture2={picture2} picture3={picture3} className={className} />
       ))}
-      <div>
+      <div className='buttonContainer'>
         {page > 1 && (
           <button onClick={() => setPage(page - 1)}>Previous</button>
         )}
@@ -83,7 +93,7 @@ const ArticlePage = () => {
       picture3: pics.watersOfGlow
     },
     { title: 'Woodland stroll',
-      content: 'In the early morning hours, two sisters wandered towards their cattle. A few feet away, a keeper of the forest tiptoed home from his night shift.',
+      content: 'In the early morning hours, two sisters wander towards their cattle. A few feet away, a keeper of the forest tiptoes home from his night shift.',
       picture1: pics.sisters,
       picture2: pics.flowerpicker,
       picture3: pics.woodenhouse
