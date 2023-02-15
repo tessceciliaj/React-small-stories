@@ -4,7 +4,6 @@
 }
 
 #root {
-  font-family: 'galderglynn_titlingregular';
   height: 100vh;
   letter-spacing: 1px;
   max-width: 1280px;
@@ -32,45 +31,47 @@ body:before {
   top: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.5;
+  opacity: 0.3;
   background-image: url(assets/holobubbles.png);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+  background-position: center;
 }
 
 h3 {
   color: var(--dark-color);
-  font-size: 32px;
-  margin-top: 48px;
+  font-size: 38px;
+  font-family: 'galderglynn_titlingextralight';
 }
 
 p {
   font-family: 'Times New Roman', Times, serif;
   color: var(--dark-color);
+  margin: 8px auto;
+  width: 260px;
 }
 
 img {
   border-radius: 10px;
-  margin: 8px 32px;
+  margin: 8px auto 24px;
   transition: 0.5s ease-in-out;
 }
 
 button {
-  bottom: 93px;
   background-color: #ffffff;
-  background-image: linear-gradient(45deg, #ffffff 5%, rgba(253, 182, 255, 0.6) 28%, #ffffff 44%, rgba(248, 255, 171, 0.8) 66%, rgba(140, 245 ,252, 0.6) 89%);
-  border-radius: 8px;
-  box-shadow: 0 0 1px 0 var(--dark-color);
+  background-image: linear-gradient(45deg, #ffffff 5%, rgba(253, 182, 255, 0.4) 28%, #ffffff 44%, rgba(248, 255, 171, 0.6) 66%, rgba(140, 245 ,252, 0.4) 89%);
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 0 2px 0 var(--dark-color);
   color: var(--dark-color);
   cursor: pointer;
-  font-family: 'Abril Fatface', cursive;
-  font-size: 1em;
-  left: 15px;
-  margin: 8px;
-  padding: 0.3em;
+  font-family: 'galderglynn_titlingextralight';
+  font-size: 16px;
+  height: 30px;
+  margin: 8px auto;
   transition: 0.25s;
-  width: 250px;
+  width: 260px;
 }
 
 button:hover {
@@ -78,30 +79,18 @@ button:hover {
 }
 
 .container {
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.3);
   border: 1px solid #ffffff;
   border-radius: 10px;
-  margin: 32px 24px 0;
+  margin: 32px auto;
   padding: 16px;
+  width: 950px;
 }
 
-.story-container {
-  display: flex;
-  justify-content: space-around;
-  margin: 0 auto;
-  width: 100%;
-}
-
-.buttonContainer {
-  bottom: 100px;
-  display: flex;
-  flex-direction: column;
-  left: 41%;
-  position: relative;
-}
-
-.inner {
-  width: 270px;
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
 }
 
 .firstPic {

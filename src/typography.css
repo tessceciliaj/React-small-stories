@@ -4,8 +4,8 @@
 
 @font-face {
      font-family: 'galderglynn_titlingregular';
-     src: url('galderglynn_titling_rg-webfont.woff2') format('woff2'),
-          url('galderglynn_titling_rg-webfont.woff') format('woff');
+     src: url('assets/Galderglynn/galderglynn_titling_rg-webfont.woff2') format('woff2'),
+          url('assets/Galderglynn/galderglynn_titling_rg-webfont.woff') format('woff');
      font-weight: normal;
      font-style: normal;
  
@@ -13,8 +13,8 @@
  
  @font-face {
      font-family: 'galderglynn_titlinglight';
-     src: url('galderglynn_titling_lt-webfont.woff2') format('woff2'),
-          url('galderglynn_titling_lt-webfont.woff') format('woff');
+     src: url('assets/Galderglynn/galderglynn_titling_lt-webfont.woff2') format('woff2'),
+          url('assets/Galderglynn/galderglynn_titling_lt-webfont.woff') format('woff');
      font-weight: normal;
      font-style: normal;
  
@@ -22,8 +22,8 @@
  
  @font-face {
      font-family: 'galderglynn_titlingextralight';
-     src: url('galderglynn_titling_el-webfont.woff2') format('woff2'),
-          url('galderglynn_titling_el-webfont.woff') format('woff');
+     src: url('assets/Galderglynn/galderglynn_titling_el-webfont.woff2') format('woff2'),
+          url('assets/Galderglynn/galderglynn_titling_el-webfont.woff') format('woff');
      font-weight: normal;
      font-style: normal;
  

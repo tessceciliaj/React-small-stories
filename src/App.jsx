@@ -38,52 +38,7 @@ const pics = {
   watersOfGlow: pic16
 }
 
-const sideLength = "250px";
-
-const Article = ({ title, content, picture1, picture2, picture3, className }) => (
-  <div className='{className} container'>
-    <h3>{title}</h3>
-    <div className="story-container">
-      <div className="innerleft inner">
-      <img src={picture1} className="firstPic" height={sideLength} width={sideLength} />
-      <p>{content}</p>
-      </div>
-      <div className="innerCenter inner">
-        <img src={picture2}  className="secondPic" height={sideLength} width={sideLength} />
-      </div>
-      <div className="innerRight inner">
-        <img src={picture3} className="thirdPic" height={sideLength} width={sideLength} />
-        <p>{content}</p>
-      </div>
-    </div>
-   </div>
-);
-
-const ArticleList = ({ articles, page, setPage }) => {
-  const startIndex = (page - 1);
-  const endIndex = startIndex + 1;
-  const visibleArticles = articles.slice(startIndex, endIndex);
-
-  return (
-    <div >
-      {visibleArticles.map(({title, content, picture1, picture2, picture3, className }) => (
-        <Article key={title} title={title} content={content} picture1={picture1} picture2={picture2} picture3={picture3} className={className} />
-      ))}
-      <div className='buttonContainer'>
-        {page > 1 && (
-          <button onClick={() => setPage(page - 1)}>Previous</button>
-        )}
-        {articles.length > endIndex && (
-          <button onClick={() => setPage(page + 1)}>Next</button>
-        )}
-      </div>
-    </div>
-  );
-};
-
-const ArticlePage = () => {
-  const [page, setPage] = useState(1);
-  const articles = [
+const articles = [
     
     { title: 'Story bubbles',
       className: 'first',
@@ -124,10 +79,27 @@ const ArticlePage = () => {
       },
   ];
 
-  return (
-    <ArticleList articles={articles} page={page} setPage={setPage} />
-  );
-};
+const sideLength = "250px";
 
-export default ArticlePage;
+function App() {
+const [currentArticle, setCurrentArticle] = useState(0);
 
+function handleSwitchArticle() {
+  setCurrentArticle((currentArticle + 1) % articles.length);
+}
+
+return (
+  <div className="container">
+    <h3>{articles[currentArticle].title}</h3>
+    <div className="wrapper">
+      <img src={articles[currentArticle].picture1} className="firstPic" height={sideLength} width={sideLength} />
+      <img src={articles[currentArticle].picture2}  className="secondPic" height={sideLength} width={sideLength} />
+      <img src={articles[currentArticle].picture3} className="thirdPic" height={sideLength} width={sideLength} />
+      <p>{articles[currentArticle].content}</p>
+      <button onClick={handleSwitchArticle}>Next</button>
+      <p>{articles[currentArticle].content}</p>
+      </div>
+    </div>
+)
+}
+export default App;
