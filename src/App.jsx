@@ -42,44 +42,50 @@ const articles = [
     
     { title: 'Story bubbles',
       className: 'first',
-      content: 'What stories does these pictures behold? AI-art holding hand with a few letters for your imagination.',
+      content1: 'What stories does these pictures behold? ',
+      content2:"AI-art holding hand with a few letters for your imagination.",
       picture1: pics.sisters,
       picture2: pics.milkHoneyChild,
       picture3: pics.watersOfGlow
     },
     { title: 'Woodland stroll',
-      content: 'In the early morning hours, two sisters wander towards their cattle. A few feet away, a keeper of the forest tiptoes home from his night shift.',
+      content1: 'In the early morning hours, two sisters wander towards their cattle.',
+      content2:" A few feet away, a keeper of the forest tiptoes home from his night shift.",
       picture1: pics.sisters,
       picture2: pics.flowerpicker,
       picture3: pics.woodenhouse
     },
     { title: 'Milk & Honey',
-      content: 'Honey dripping as gold, creating an armor. Milk leaking from eyes, filling cups. Then we ballet out to the world. ',
+      content1: 'Honey dripping as gold, creating an armor. Milk leaking from eyes, filling cups.  ',
+      content2:"Then we ballet out to the world.",
       picture1: pics.milkHoneyChild,
       picture2: pics.milkHoneyMama,
       picture3: pics.milkHoneyTwin
     },
     { title: 'Decreasing Minutes',
-      content: 'Two lovers at the end of their timeline. Before falling of the edge into oblivion, they share one last night of touch in the bioluminious frost.',
+      content1: 'Two lovers at the end of their timeline. Before falling of the edge into oblivion.',
+      content2:"  They share one last night of touch in the bioluminious frost.",
       picture1: pics.bioluminSky,
       picture2: pics.bioluminHug,
       picture3: pics.bioluminTent 
     },
     { title: 'Painting with light',
-     content: 'Inside glowing waters, small jellyfish bumps around and hymn tones of creativity. Their humanoid companions paint the surrounding with light, using their jelly heads.',
+     content1: 'Inside glowing waters, small jellyfish bumps around and hymn tones of creativity. ',
+     content2:"Their humanoid companions paint the surrounding with light, using their jelly heads.",
      picture1: pics.luminForest,
      picture2: pics.luminJellyfish,
      picture3: pics.luminPerson 
     },
     { title: 'Sand Mutations',
-      content: 'A mortal in a vast desert limping with cracked soles towards the labyrinth of  Chrono. A place where time does not exist, but vicious horse-penguins does.',
+      content1: 'A mortal in a vast desert limping with cracked soles towards the labyrinth of  Chrono.',
+      content2:" A place where time does not exist, but vicious horse-penguins does.",
       picture1: pics.sandLabyrinth,
       picture2: pics.sandHumanoid,
       picture3: pics.sandAnimal
       },
   ];
 
-const sideLength = "250px";
+const sideLength = "230px";
 
 function App() {
 const [currentArticle, setCurrentArticle] = useState(0);
@@ -95,9 +101,9 @@ return (
       <img src={articles[currentArticle].picture1} className="firstPic" height={sideLength} width={sideLength} />
       <img src={articles[currentArticle].picture2}  className="secondPic" height={sideLength} width={sideLength} />
       <img src={articles[currentArticle].picture3} className="thirdPic" height={sideLength} width={sideLength} />
-      <p>{articles[currentArticle].content}</p>
+      <p>{articles[currentArticle].content1}</p>
       <button onClick={handleSwitchArticle}>Next</button>
-      <p>{articles[currentArticle].content}</p>
+      <p>{articles[currentArticle].content2}</p>
       </div>
     </div>
 )

@@ -31,7 +31,7 @@ body:before {
   top: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.3;
+  opacity: 0.4;
   background-image: url(assets/holobubbles.png);
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -43,12 +43,13 @@ h3 {
   color: var(--dark-color);
   font-size: 38px;
   font-family: 'galderglynn_titlingextralight';
+  letter-spacing: 5px;
 }
 
 p {
   font-family: 'Times New Roman', Times, serif;
   color: var(--dark-color);
-  margin: 8px auto;
+  margin: 20px auto;
   width: 260px;
 }
 
@@ -60,16 +61,15 @@ img {
 
 button {
   background-color: #ffffff;
-  background-image: linear-gradient(45deg, #ffffff 5%, rgba(253, 182, 255, 0.4) 28%, #ffffff 44%, rgba(248, 255, 171, 0.6) 66%, rgba(140, 245 ,252, 0.4) 89%);
+  background-image: linear-gradient(30deg, rgba(216,199,207,0.8) 20%, rgba(209, 210, 165, 0.8) 66%, rgba(175,216,243,0.8) 89%);
   border-radius: 5px;
-  border: none;
-  box-shadow: 0 0 2px 0 var(--dark-color);
+  border: 1px solid var(--dark-color);
   color: var(--dark-color);
   cursor: pointer;
   font-family: 'galderglynn_titlingextralight';
   font-size: 16px;
   height: 30px;
-  margin: 8px auto;
+  margin: 20px auto;
   transition: 0.25s;
   width: 260px;
 }
@@ -118,7 +118,38 @@ button:hover {
 }
 
 @media screen and (max-width: 768px) {
+
   img {
+    width: 110px;
+    height: 110px;
+    margin: 8px auto;
+  }
+  
+  h3 {
     margin: 2px;
+    font-family: 'galderglynn_titlingregular';
+    font-size: 16px;
+  }
+
+  button {
+    margin: 4px auto;
+    width: auto;
+  }
+
+  p {
+    margin: 4px auto;
+    width: auto;
+  }
+ 
+ .wrapper {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: center;
+    width: 300px;
+  }
+
+  .container {
+    width: 80%;
+    padding: 32px;
   }
 }
